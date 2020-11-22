@@ -2,10 +2,47 @@ const router = require('express').Router();
 const Beer = require('../models/beer.model');
 
 router.route('/').get((req, res) => {
-  Beer.find()
+  Beer.find().sort("name")
     .then(beers => res.json(beers))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
+router.route('/id=:id').get((req, res) => {
+  Beer.findById(req.params.id)
+  .then(beers => res.json(beers))
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/name=:name').get((req, res) => {
+  Beer.findOne({name: req.params.name})
+  .then(beers => res.json(beers))
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/brewery=:brewery').get((req, res) => {
+  Beer.find().where({brewery: req.params.brewery})
+  .then(beers => res.json(beers))
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/ratinghigher=:rating').get((req, res) => {
+  Beer.find().where({rating:{ $gt: req.params.rating}})
+  .then(beers => res.json(beers))
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/ratinghigher=:rating').get((req, res) => {
+  Beer.find().where({rating:{ $gt: req.params.rating}})
+  .then(beers => res.json(beers))
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/type=:type').get((req, res) => {
+  Beer.find().where({type: req.params.type})
+  .then(beers => res.json(beers))
+  .catch(err => res.status(400).json('Error: ' + err));
+});
+
 
 router.route('/add').post((req, res) => {
     const name = req.body.name;
