@@ -13,12 +13,14 @@ router.route('/add').post((req, res) => {
     const rating = Number(req.body.rating);
     const type = req.body.type;
     const brewery =req.body.brewery;
+    const abv =req.body.abv;
 
 
     const newBeer = new Beer({
       name,
       type,
       brewery,
+      abv,
       description,
       rating
     });
