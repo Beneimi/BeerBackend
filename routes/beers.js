@@ -23,14 +23,14 @@ router.route('/add').post((req, res) => {
     newBeer.save()
     .then(() => res.json('Beer added!'))
     .catch(err => res.status(400).json('Error: ' + err));
-
+/*
     //console.log(id);
     var fs = require('fs');
 
     fs.writeFile(`./images/beers/${newBeer._id}.jpg`, image.replace(/^data:image\/png;base64,/, "") ,'base64', (err) => {
       if (err) throw err;
       //console.log(image);
-    });
+    });*/
 
   });
 module.exports = router;
