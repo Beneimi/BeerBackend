@@ -11,11 +11,14 @@ router.route('/add').post((req, res) => {
     const name = req.body.name;
     const description = req.body.description;
     const rating = Number(req.body.rating);
+    const type = req.body.type;
+    const brewery =req.body.brewery;
 
-    const id = "";
 
     const newBeer = new Beer({
       name,
+      type,
+      brewery,
       description,
       rating
     });
