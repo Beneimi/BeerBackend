@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose'); //help us connect to db
+const mongoose = require('mongoose');
+const path = require('path');
+
 
 require('dotenv').config();
 
@@ -30,6 +32,10 @@ app.use('/users', usersRouter);
 app.use('/beers', beerRouter);
 app.use('/images', imageRouter);
 
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
 
 
 app.listen(port, () => {

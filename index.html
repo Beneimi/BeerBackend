@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer API</title>
+</head>
+<body>
+
+    <h1>API usage</h1>
+    <table>
+        <thead style="text-align: center;">
+            <tr>
+                <th>Method</th>
+                <th>Path</th>
+                <th>Response</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>GET</td>
+                <td>beers/</td>
+                <td>List of all beers</td>
+                <td style="text-align: center;"> - </td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>beers/name={name}</td>
+                <td>Beer with the given name</td>
+                <td style="text-align: center;"> - </td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>beers/brewery={brewery}</td>
+                <td>Beers with the given brewery</td>
+                <td style="text-align: center;"> - </td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>beers/id={id}</td>
+                <td>Beer with the given id</td>
+                <td style="text-align: center;"> - </td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>beers/ratinghigher={rating}</td>
+                <td>Beers with rating higher than the given value</td>
+                <td style="text-align: center;"> - </td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>beers/type={type}</td>
+                <td>Beers with the given type</td>
+                <td style="text-align: center;"> - </td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>beers/add</td>
+                <td>Beers with the given type</td>
+                <td style="text-align: center;"> - </td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>beers/add</td>
+                <td>Beers with the given type</td>
+                <td style="text-align: center;">Beer formed as JSON</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
