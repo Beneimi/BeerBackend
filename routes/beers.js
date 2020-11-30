@@ -51,6 +51,7 @@ router.route('/add').post((req, res) => {
     const type = req.body.type;
     const brewery =req.body.brewery;
     const abv =req.body.abv;
+    const image =req.body.image;
 
 
     const newBeer = new Beer({
@@ -59,7 +60,8 @@ router.route('/add').post((req, res) => {
       brewery,
       abv,
       description,
-      rating
+      rating,
+      image
     });
   
     newBeer.save()
@@ -72,7 +74,7 @@ router.route('/add').post((req, res) => {
     fs.writeFile(`./images/beers/${newBeer._id}.jpg`, image.replace(/^data:image\/png;base64,/, "") ,'base64', (err) => {
       if (err) throw err;
       //console.log(image);
-    });*/
-
+    });
+*/
   });
 module.exports = router;
